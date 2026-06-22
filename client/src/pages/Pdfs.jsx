@@ -3,7 +3,10 @@ import { useWorkspace } from "./WorkspaceLayout";
 import { getPdfsRequest, uploadPdfRequest, deletePdfRequest } from "../services/contentAPI";
 import "./Files.css";
 
-const API_ORIGIN = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/api$/, "");
+const API_ORIGIN = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(
+  /\/api$/,
+  ""
+);
 
 export default function Pdfs() {
   const { workspace } = useWorkspace();
@@ -31,14 +34,17 @@ export default function Pdfs() {
   const handleFileSelect = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
+
     if (file.type !== "application/pdf") {
       setError("Only PDF files are allowed.");
       return;
     }
+
     setError("");
     setUploading(true);
     const formData = new FormData();
     formData.append("pdf", file);
+
     try {
       await uploadPdfRequest(workspace._id, formData);
       loadPdfs();
@@ -58,12 +64,6 @@ export default function Pdfs() {
     } catch (err) {
       alert(err.response?.data?.message || "Could not delete PDF.");
     }
-  };
-
-  const formatMeta = (pdf) => {
-    const name = pdf.uploadedBy?.fullName || "Unknown";
-    const date = new Date(pdf.createdAt).toLocaleDateString();
-    return name + " - " + date;
   };
 
   return (
@@ -87,6 +87,7 @@ export default function Pdfs() {
       </div>
 
       {error && <div className="auth-error">{error}</div>}
+
       {loading && <p className="files-empty">Loading PDFs...</p>}
 
       {!loading && pdfs.length === 0 && (
@@ -102,13 +103,25 @@ export default function Pdfs() {
             <div className="file-card" key={pdf._id}>
               <div className="file-card-icon">PDF</div>
               <div className="file-card-info">
-                <a href={API_ORIGIN + pdf.fileUrl} target="_blank" rel="noopener noreferrer" className="file-card-name" title={pdf.fileName}>
+                <a
+                  href={`${API_ORIGIN}${pdf.fileUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="file-card-name"
+                  title={pdf.fileName}
+                >
                   {pdf.fileName}
                 </a>
-                <span className="file-card-meta">{formatMeta(pdf)}</span>
+                <span className="file-card-meta">
+                  {pdf.uploadedBy?.fullName} · {new Date(pdf.createdAt).toLocaleDateString()}
+                </span>
               </div>
               <div className="file-card-actions">
-                <a href={API_ORIGIN + pdf.fileUrl} download className="file-card-action">
+                <a
+                  href={`${API_ORIGIN}${pdf.fileUrl}`}
+                  download
+                  className="file-card-action"
+                >
                   Download
                 </a>
                 <button className="file-card-delete" onClick={() => handleDelete(pdf._id)}>

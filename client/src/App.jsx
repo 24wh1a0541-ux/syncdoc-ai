@@ -12,7 +12,6 @@ import Links from "./pages/Links";
 import CodeSnippets from "./pages/CodeSnippets";
 import Pdfs from "./pages/Pdfs";
 import Images from "./pages/Images";
-import Settings from "./pages/Settings";
 import PrivateRoute from "./routes/PrivateRoute";
 
 export default function App() {
@@ -21,8 +20,22 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-      <Route path="/workspace/:workspaceId" element={<PrivateRoute><WorkspaceLayout /></PrivateRoute>}>
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/workspace/:workspaceId"
+        element={
+          <PrivateRoute>
+            <WorkspaceLayout />
+          </PrivateRoute>
+        }
+      >
         <Route index element={<Overview />} />
         <Route path="tasks" element={<Tasks />} />
         <Route path="members" element={<Members />} />
@@ -30,7 +43,7 @@ export default function App() {
         <Route path="code" element={<CodeSnippets />} />
         <Route path="pdfs" element={<Pdfs />} />
         <Route path="images" element={<Images />} />
-        <Route path="settings" element={<Settings />} />
+        {/* Settings route added next */}
       </Route>
     </Routes>
   );
