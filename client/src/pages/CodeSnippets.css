@@ -1,0 +1,114 @@
+.snippets-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.snippets-header h1 {
+  font-size: 24px;
+}
+
+.snippets-sub {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.snippets-empty {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.snippets-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.snippets-empty-state h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.snippets-empty-state p {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.snippets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.snippet-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.snippet-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+  gap: 12px;
+}
+
+.snippet-card-header h4 {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.snippet-lang {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.snippet-actions {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.snippet-actions button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.snippet-actions button:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
+}
+
+.snippet-delete {
+  color: var(--color-danger) !important;
+}
+
+.form-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  resize: vertical;
+}

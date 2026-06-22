@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #e8e0d4;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #2c1f0e;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-icon-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.navbar-icon-btn:hover {
+  background: #f5f0e8;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.navbar-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2c1f0e;
+}
+
+.navbar-logout {
+  font-family: 'Inter', sans-serif;
+  padding: 7px 14px;
+  font-size: 13px;
+  background: none;
+  border: 1px solid #d0c4b0;
+  border-radius: 7px;
+  color: #5a4a38;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.navbar-logout:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+@media (max-width: 640px) {
+  .navbar-name { display: none; }
+  .navbar-inner { padding: 0 16px; }
+}

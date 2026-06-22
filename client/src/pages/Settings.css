@@ -1,0 +1,59 @@
+.settings-page h1 {
+  font-size: 24px;
+}
+
+.settings-sub {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+.settings-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.settings-card h2 {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.settings-card p {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.settings-success {
+  font-size: 13px;
+  color: var(--color-success);
+  margin-bottom: 12px;
+}
+
+.settings-danger-card {
+  border-color: #fca5a5;
+}
+
+.settings-danger-card h2 {
+  color: var(--color-danger);
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  opacity: 0.88;
+}
