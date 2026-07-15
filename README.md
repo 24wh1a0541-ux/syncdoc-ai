@@ -108,6 +108,4 @@ The client will be available at `http://localhost:5173`.
 | `/api/workspaces/:workspaceId/members` | Workspace membership |
 | `/api/workspaces/:workspaceId/search` | Search within a workspace |
 
-## License
 
-No license specified yet.
